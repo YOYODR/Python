@@ -296,8 +296,11 @@ python ../manage.py startapp erp #erp es el nombre de la app
         librerias van al inicio del archivo
       </li>
       <div class="codigo">
-        <pre><code>from datetime import datetime
+        <pre><code id="date-joined-atri">from datetime import datetime
 date_joined = models.DateField(default=datetime.now, verbose_name='Fecha')</code></pre>
+        <button onclick="copiar('date-joined-atri','14')" id="14">
+          Copiar
+        </button>
       </div>
       <li>Algunos atributos de <b>models.DateField</b></li>
       <ul style="list-style-type: square">
@@ -310,6 +313,39 @@ date_joined = models.DateField(default=datetime.now, verbose_name='Fecha')</code
           creacion del registro
         </li>
       </ul>
+      <li>
+        Creamos el atributo <b>age</b> para almacenar una edad, en este caso, un
+        número entero
+      </li>
+      <div class="codigo">
+        <pre><code id="age-integer-models">age = models.IntegerField(default=0)</code></pre>
+        <button onclick="copiar('age-integer-models','15')" id="15">
+          Copiar
+        </button>
+      </div>
+      <li>Algunos atributos de los números enteros</li>
+      <ul style="list-style-type: square">
+        <li>
+          <b>PositiveIntegerField()</b> para valores enteros pero solo positivos
+        </li>
+        <li>
+          <b>NegativeIntegerField()</b> para valores enteros pero solo negativos
+        </li>
+      </ul>
+      <li>
+        Creamos el atributo <b>salary</b> para almacenar números decimales, como
+        es para decimales, si le voy a poner un <b>default</b> debe ser
+        <b>0.00</b>, los 2 ceros es según los decimales que le permita en el
+        <b>decimal_places</b>, que con ese le digo cuantos decimales se
+        permiten, y con <b>max_digits</b> le especifico el maximo de digitos del
+        número a registrar, por ejemplo, si le puse 9 digitos maximos, el número
+        más grande que recibe es 9999999.99, 7 a la izquierda del punto decimal
+        y los 2 de la derecha que son los 2 de <b>decimal_places</b>
+      </li>
+      <div class="codigo">
+        <pre><code id="salary-decimal">salary = models.DecimalField(default=0.00,max_digits=9,decimal_places=2)</code></pre>
+        <button onclick="copiar('salary-decimal','16')" id="16">Copiar</button>
+      </div>
     </ul>
     <h2><i>Video 9</i></h2>
     <h2><i>Video 10</i></h2>
